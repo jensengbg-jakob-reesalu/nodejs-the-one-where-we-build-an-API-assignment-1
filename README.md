@@ -10,7 +10,9 @@ I denna inlämningsuppgift ska du bygga en Node.JS-applikation för en e-handels
     * Kunna lägga till produkter i en varukorg.
     * Kunna ta bort produkter i varukorgen.
     * Hämta varukorgen med alla tillagda produkter.
-
+* Man ska inte kunna lägga till samma produkt i varukorgen igen.
+* Man ska få ett felmeddelande om man försöker lägga till en produkt som inte finns.
+* Man ska få ett felmeddelande om man försöker ta bort en produkt som inte finns.
 
 **En produkt ska innehålla följande:**
 * Namn
