@@ -34,6 +34,6 @@ din code review på och tre saker som du tycker är bra samt en sak som kan för
 
 Inlämning sker via Github och Learnpoint. Ladda upp ditt projekt på Github inklusive din databas (d.v.s din JSON-fil). Gå sedan in på Learnpoint och under innehåll finns det en inlämningsuppgift där du ska posta din länk till ditt repo. Bifoga även med ditt dokument gällande code review om du satsar på Väl Godkänt.
 
-**Inlämning senast**: 29/1 23:59 
+**Inlämning senast**: 22/4 23:59 
 
 
