@@ -1,0 +1,29 @@
+{
+  "name": "internet-store",
+  "version": "1.0.0",
+  "description": "A website for internet purchases",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zocom-christoffer-wallenberg/nodejs-the-one-where-we-build-an-API-assignment-1.git"
+  },
+  "keywords": [
+    "products",
+    "tech"
+  ],
+  "author": "Jakob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zocom-christoffer-wallenberg/nodejs-the-one-where-we-build-an-API-assignment-1/issues"
+  },
+  "homepage": "https://github.com/zocom-christoffer-wallenberg/nodejs-the-one-where-we-build-an-API-assignment-1#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "nodemon": "^2.0.3"
+  }
+}
