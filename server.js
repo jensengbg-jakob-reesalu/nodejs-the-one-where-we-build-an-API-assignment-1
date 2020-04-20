@@ -1,26 +1,26 @@
-// Server constants
+// ---------------------------------------------- SERVER CONSTANTS ----------------------------------------------
 const express = require("express");
 const app = express();
 const port = process.env.port || 8000;
 
-// Database constants
+// ---------------------------------------------- DATABASE CONSTANTS ----------------------------------------------
 const lowdb = require("lowdb");
 const filesync = require("lowdb/adapters/FileSync");
 const adapter = new filesync("online-store.json");
 const database = lowdb(adapter);
 
-// app.use(express.static("public"));
-app.use(express.json());
 
+app.use(express.json());
 app.listen(port, () => {
     console.log("Started server.");
 });
 
-// Routing
+// ---------------------------------------------- ROUTING ----------------------------------------------
 app.get("/", (req, res) => {
     res.send("Welcome to the online store!");
 })
 
+// Get all products
 app.get("/api/getAllProducts", (req, res) => {
     console.log("Request from client: ", req.url);
     let products = database.get("products").value();
@@ -28,18 +28,23 @@ app.get("/api/getAllProducts", (req, res) => {
     console.log("Response sent.");
 });
 
-app.post("/api/addToCart/:product", (req, res) => {
+// Add to cart
+app.post("/api/addToCart/:productName", (req, res) => {
     console.log("Request from client: ", req.url);
-    let productName = req.params.product;
-    let findProduct = database.get("products").find( {name: productName} ).value();
-    console.log(findProduct);
-    database.get("cart").push(findProduct).write();
+    let reqProductName = req.params.productName;
+    let clientResponse = addToCart(reqProductName);
+    res.send(clientResponse);
 });
 
-app.delete("/api/removeFromCart", (req, res) => {
-    
+// Remove from cart
+app.delete("/api/removeFromCart/:productName", (req, res) => {
+    console.log("Request from client: ", req.url);
+    let reqProductName = req.params.productName;
+    let clientResponse = removeFromCart(reqProductName);
+    res.send(clientResponse);
 });
 
+// Get cart
 app.get("/api/getCart", (req, res) => {
     console.log("Request from client: ", req.url);
     let cart = database.get("cart").value();
@@ -47,6 +52,31 @@ app.get("/api/getCart", (req, res) => {
     console.log("Response sent.");
 });
 
+
+// ---------------------------------------------- FUNCTIONS ----------------------------------------------
+function addToCart(productName) {
+    let product = database.get("products").find( {name: productName} ).value();
+    let productInCart =  database.get("cart").find( {name: productName} ).value();
+    if (product == undefined) {
+        return {success: false, message: "No such product exists!"};
+    } else if (productInCart != undefined) {
+        return {success: false, message: "Product already in cart!"};
+    } else {
+        database.get("cart").push(product).write();    
+        return {success: true, message: "Product added to cart!"};
+    };
+};
+
+function removeFromCart(productName) {
+    let productInCart = database.get("cart").find( {name: productName} ).value();
+    if (productInCart == undefined) {
+        return {success: false, message: "No such product in cart!"};
+    } else {
+        let index = database.get("cart").indexOf(productInCart).value();    
+        database.get("cart").splice(index, 1).write();
+        return {success: true, message: "Product removed from cart!"};
+    };
+};
 
 // **Krav på funktionalitet**
 // * Endpoint:s för följande:
