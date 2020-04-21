@@ -23,16 +23,6 @@
   ],
   "cart": [
     {
-      "name": "smartphone",
-      "price": "4999",
-      "image": "https://placeimg.com/640/480/tech?t=1587376962870"
-    },
-    {
-      "name": "macbook",
-      "price": "15000",
-      "image": "https://placeimg.com/640/480/tech?t=1587376850023"
-    },
-    {
       "name": "headphones",
       "price": "299",
       "image": "https://placeimg.com/640/480/tech?t=1587376916504"
