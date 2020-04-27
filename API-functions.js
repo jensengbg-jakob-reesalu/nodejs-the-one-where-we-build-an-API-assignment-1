@@ -1,6 +1,6 @@
 const lowdb = require("lowdb");
 const filesync = require("lowdb/adapters/FileSync");
-const adapter = new filesync("online-store.json");
+const adapter = new filesync("database.json");
 const database = lowdb(adapter);
 
 function addToCart(productName) {

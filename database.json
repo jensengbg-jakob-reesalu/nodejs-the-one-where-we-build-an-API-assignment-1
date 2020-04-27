@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "name": "Macbook",
+      "price": "15000",
+      "image": "https://placeimg.com/640/480/tech?t=1587376850023",
+      "specs": [
+        "1.4GHz quad-core 8th-generation Intel Core i5 processor",
+        "Turbo Boost up to 3.9GHz",
+        "Intel Iris Plus Graphics 645",
+        "8GB 2133MHz LPDDR3 memory",
+        "128GB SSD storage"]
+    },
+    {
+      "name": "Headphones",
+      "price": "299",
+      "image": "https://placeimg.com/640/480/tech?t=1587376916504",
+      "specs": [
+        "JBL Pure Bass Sound",
+        "Type: On-ear headphones",
+        "Connections: 3.5mm jack plug", 
+        "Weight: 127g", 
+        "Cable length: 1.2m"
+      ]
+    },
+    {
+      "name": "Smartphone",
+      "price": "4999",
+      "image": "https://placeimg.com/640/480/tech?t=1587376962870"
+    },
+    {
+      "name": "Tablet",
+      "price": "5999",
+      "image": "https://placeimg.com/640/480/tech?t=1587377005185"
+    }
+  ],
+  "cart": [
+    {
+      "name": "headphones",
+      "price": "299",
+      "image": "https://placeimg.com/640/480/tech?t=1587376916504"
+    }
+  ]
+}

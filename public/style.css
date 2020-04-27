@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(244, 244, 244);
+}
+
+main {
+    display: flex;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkslategrey;
+}
+
+#logo {
+    margin: 1rem;
+    height: 170px;
+    width: 170px;
+}
+
+h1 {
+    margin: 0;
+    width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(244, 244, 244);
+    text-shadow: 1px 1px 3px black;
+    border-bottom: solid 2px rgb(244, 244, 244);
+}
+
+#text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#text-wrapper p {
+    margin: 9px 0 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(244, 244, 244);
+    text-shadow: 1px 1px 3px black;
+}
+
+#cart-btn {
+    align-self: flex-start;
+    margin: 1rem;
+    color: rgb(50, 50, 50);
+    background-color: rgb(244, 244, 244);
+    border: solid 2px rgb(50, 50, 50);
+    padding: 7px;
+    border-radius: 100px;
+}
+
+#cart-btn:hover {
+    background-color: rgb(50, 50, 50);
+    color: rgb(244, 244, 244);
+    border: solid 2px rgb(244, 244, 244);
+}
+
+#counter-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 14px;
+    right: 50px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 100px;
+}
+
+#counter {
+    margin: 0;
+    font-size: 9px;
+    font-family: sans-serif;
+    color: white;
+}
+
+#cart-icon {
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main article {
+    display: flex;
+    margin: 1rem;
+    border: solid 3px darkslategrey;
+}
+
+main article img {
+    height: 200px;
+    width: 200px;
+}
+
+main article h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main article section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    background-color: slategrey;
+    color: rgb(244, 244, 244);
+}
+
+.buy-btn {
+    position: relative;
+    align-self: flex-end;
+    bottom: 10px;
+
+}
+
+footer {
+    height: 30%;
+    background-color: chocolate;
+}
+
+
+.wrapper-icons i {
+    font-size: 2rem;
+    margin: .2rem;
+    color: #88d8b0;
+}
+
+.hidden {
+    opacity: 0%;
+}

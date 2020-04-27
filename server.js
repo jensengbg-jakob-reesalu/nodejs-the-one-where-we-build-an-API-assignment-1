@@ -1,5 +1,3 @@
-// NOTE: As there is no frontend client for this project, the POST and DELETE endpoints works only in Postman.
-
 
 // SERVER CONSTANTS + SETUP
 const express = require("express");
@@ -11,20 +9,18 @@ app.listen(port, () => {
     console.log("Started server.");
 });
 
+app.use(express.static("public"));
+
 // DATABASE CONSTANTS 
 const lowdb = require("lowdb");
 const filesync = require("lowdb/adapters/FileSync");
-const adapter = new filesync("online-store.json");
+const adapter = new filesync("database.json");
 const database = lowdb(adapter);
 
 // MODULE CONSTANTS 
 const apiFunction = require("./API-functions.js");
 
 // ROUTING/API-ENDPOINTS 
-app.get("/", (req, res) => {
-    res.send("Welcome to the online store!");
-})
-
 // Get all products
 app.get("/api/getAllProducts", (req, res) => {
     console.log("Request from client: ", req.url);
