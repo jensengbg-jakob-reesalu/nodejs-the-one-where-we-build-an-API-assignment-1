@@ -1,6 +1,7 @@
 // Fetch all products from database 
 // Create product articles
 let products = [];
+let listItems = [];
 fetchProducts();
 
 
@@ -16,7 +17,6 @@ async function fetchProducts() {
     console.log("fetchProducts finished");
 };
 
-let listItems = [];
 function displayProducts(array) {
     for (let i = 0; i < array.length; i++) {
         let name = array[i].name;
@@ -30,12 +30,13 @@ function displayProducts(array) {
         let ul = `ul${i}`;
 
         article.innerHTML = `
-        <section id="img-wrapper">
+        <section class="img-wrapper">
             <img src=${image}>
         </section>
-        <section>
+        <section class="text-section">
             <h2>${name}</h2>
             <ul id="${ul}"></ul>
+            <p>${price} SEK</p>
             <button class="buy-btn">BUY</button>
         </section>
         `;
