@@ -1,23 +1,16 @@
-// Fetch all products from database 
-// Create product articles
-let products = [];
-let listItems = [];
-fetchProducts();
-
-
-
+export async function listProducts() {
+    let products = await fetchProducts();
+    await displayProducts(products);
+};
 
 async function fetchProducts() {
     let response = await fetch("http://localhost:8000/api/getAllProducts");
     let data = await response.json();
-    displayProducts(data);
-    // for (let i = 0; i < data.length; i++) {
-    //     products.push(data[i]);
-    // };
-    console.log("fetchProducts finished");
+    return data;
 };
 
 function displayProducts(array) {
+    let listItems = [];
     for (let i = 0; i < array.length; i++) {
         let name = array[i].name;
         let price = array[i].price;
@@ -27,6 +20,8 @@ function displayProducts(array) {
             listItems.push(`<li>${specs[j]}</li>`);
         };
         let article = document.createElement("article");
+        article.classList.toggle("article-index");
+        document.getElementById("main").appendChild(article);   
         let ul = `ul${i}`;
 
         article.innerHTML = `
@@ -37,14 +32,19 @@ function displayProducts(array) {
             <h2>${name}</h2>
             <ul id="${ul}"></ul>
             <p>${price} SEK</p>
-            <button class="buy-btn">BUY</button>
+            <button id="buy-${name}" class="buy-btn">BUY</button>
         </section>
         `;
-        document.getElementById("main").appendChild(article);   
         listItems.forEach(element => document.getElementById(`${ul}`).innerHTML += element)
         listItems = [];
+        assignListener(name);
     };
-    
-    console.log("displayProducts finished");
 };
 
+function assignListener(productName) {
+    document.getElementById(`buy-${productName}`).addEventListener("click", async () => {
+        let response = await fetch(`http://localhost:8000/api/addToCart/${productName}`, {method: "POST"});
+        let data = await response.json();
+        console.log(data);
+    });
+}; 
