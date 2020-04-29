@@ -49,6 +49,10 @@ app.delete("/api/removeFromCart/:productName", (req, res) => {
 app.get("/api/getCart", (req, res) => {
     console.log("Request from client: ", req.url);
     let cart = database.get("cart").value();
-    res.send(cart);
+    if (cart.length == 0) {
+        res.send( {success: false, message: "Cart is empty!"} );
+    } else {
+        res.send( {success: true, message: cart} );
+    }
     console.log("Response sent.");
 });

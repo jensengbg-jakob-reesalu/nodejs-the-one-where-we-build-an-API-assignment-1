@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,16 @@
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <header>
+        <img id="logo" src="./techbase-logo.png" alt="The logo of Techbase">
         <h1>Your Cart</h1>
+        <div class="cart-btn-wrapper"></div> <!--For centering the title -->
         <a href="products.html" id="return-btn"></a>
     </header>
-    <main id="main2">
+    <main id="main-cart">
+        <!-- "Cart empty"-message generated in client.js -->
         <!-- Product content generated in client.js -->
         <button id="chat-btn"></button>
     </main>
@@ -29,7 +34,7 @@
             <a href="">TW</a>
         </section>
     </footer>
-    
+
     <script type="module" src="./cart.js"></script>
 </body>
 
