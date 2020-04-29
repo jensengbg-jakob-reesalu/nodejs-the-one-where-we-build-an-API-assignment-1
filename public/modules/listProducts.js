@@ -32,11 +32,13 @@ function displayProducts(array) {
             <h2>${name}</h2>
             <ul id="${ul}"></ul>
             <p>${price} SEK</p>
-            <button id="buy-${name}" class="buy-btn">BUY</button>
+            <button id="buy-${name}" class="add-btn">ADD TO CART</button>
         </section>
         `;
-        listItems.forEach(element => document.getElementById(`${ul}`).innerHTML += element)
+        listItems.forEach((element) => document.getElementById(`${ul}`).innerHTML += element);
         listItems = [];
+        
+
         assignListener(name);
     };
 };

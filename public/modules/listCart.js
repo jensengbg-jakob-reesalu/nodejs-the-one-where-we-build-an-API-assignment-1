@@ -51,7 +51,6 @@ function assignListener(productName, parentArticle) {
         let response = await fetch(`http://localhost:8000/api/removeFromCart/${productName}`, {method: "DELETE"});
         let data = await response.json();
         console.log(data);
-        parentArticle.classList.toggle("click-effect");
         parentArticle.classList.toggle("remove-effect");
         setTimeout(() => {parentArticle.remove()}, 500); //Removes element after effect-duration
         setTimeout(() => fetchCart(), 1000); //Checking if cart is empty
