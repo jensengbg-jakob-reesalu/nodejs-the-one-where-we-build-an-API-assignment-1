@@ -1,15 +1,38 @@
+// BACKUP
+// const express = require("express");
+// const app = express();
+// const port = process.env.port || 8000;
+
+// app.use(express.json());
+// app.listen(port, () => {
+//     console.log("Started server.");
+// });
+
+// app.use(express.static("public"));
 
 // SERVER CONSTANTS + SETUP
 const express = require("express");
 const app = express();
-const port = process.env.port || 8000;
-
-app.use(express.json());
-app.listen(port, () => {
-    console.log("Started server.");
-});
+const http = require("http").createServer(app);
+// const io = require("socket.io")(http);
 
 app.use(express.static("public"));
+http.listen(8000, () => {
+    console.log("Started server.")
+})
+
+app.use(express.json());
+
+// SOCKET.IO
+// io.on("connection", (socket) => {
+//     socket.on("join", (username) => {
+//         console.log(username); 
+//     })
+// })
+
+// io.on("join", () => {
+//     console.log("User joined chat!")
+// });
 
 // DATABASE CONSTANTS 
 const lowdb = require("lowdb");
