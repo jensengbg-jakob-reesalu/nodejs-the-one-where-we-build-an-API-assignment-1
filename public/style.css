@@ -245,6 +245,15 @@ h1 {
     outline: none;
 }
 
+#message-display {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 10px;
+}
+
 main {
     display: flex;
     flex-direction: column;

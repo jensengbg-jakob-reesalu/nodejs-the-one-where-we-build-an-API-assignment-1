@@ -26,13 +26,12 @@ app.use(express.json());
 // SOCKET.IO
 io.on("connection", (socket) => {
     socket.on("join", (username) => {
-        console.log(username); 
-    })
-})
+        console.log(`User ${username} joined the chat.`);
+        
+        // socket.emit("received", username); 
+    });
 
-io.on("join", () => {
-    console.log("User joined chat!")
-});
+})
 
 // DATABASE CONSTANTS 
 const lowdb = require("lowdb");

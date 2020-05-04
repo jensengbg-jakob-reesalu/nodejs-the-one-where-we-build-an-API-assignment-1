@@ -4,24 +4,37 @@ listProducts();
 
 let socketIO = io();
 
+let chatBtn = document.querySelector("#chat-btn");
+let chatWindowWrapper = document.querySelector(".chat-window-wrapper");
+let removeP = document.querySelector("#remove-p");
+let customerSupportP = document.querySelector("#costumer-support-p");
+let submitBtn = document.querySelector("#submit-btn");
+let usernameWindow = document.querySelector("#username-window");
+let chatWindow = document.querySelector("#chat-window");
 
-document.getElementById("chat-btn").addEventListener("click", () => {
-    let chatWindowWrapper = document.querySelector(".chat-window-wrapper");
+chatBtn.addEventListener("click", () => {
     chatWindowWrapper.classList.toggle("hidden"); 
     chatWindowWrapper.classList.toggle("expand");
-    document.getElementById("remove-p").classList.add("hidden");
-    document.getElementById("costumer-support-p").classList.add("hidden");
+    removeP.classList.add("hidden");
+    customerSupportP.classList.add("hidden");
 });
 
-document.getElementById("remove-p").addEventListener("click", () => {
-    document.getElementById("remove-p").classList.add("hidden");
-    document.getElementById("costumer-support-p").classList.add("hidden");
+removeP.addEventListener("click", () => {
+    removeP.classList.add("hidden");
+    customerSupportP.classList.add("hidden");
 });
 
-document.getElementById("submit-btn").addEventListener("click", () => {
-    document.querySelector("#username-window").classList.toggle("hidden");
-    document.querySelector("#chat-window").classList.toggle("hidden");
-})
+submitBtn.addEventListener("click", () => {
+    usernameWindow.classList.toggle("hidden");
+    chatWindow.classList.toggle("hidden");
+
+    let username = document.querySelector("#username-input").value;
+    socketIO.emit("join", username);
+    // socketIO.on("received", (username) => {
+    //     let messages = document.querySelector("#message-display");
+    //     messages.innerHTML += `${username} joined the chat.`;
+    // });
+});
 
 
 
