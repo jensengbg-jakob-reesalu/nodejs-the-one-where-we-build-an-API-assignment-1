@@ -14,7 +14,7 @@
 const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
-// const io = require("socket.io")(http);
+const io = require("socket.io")(http);
 
 app.use(express.static("public"));
 http.listen(8000, () => {
@@ -24,15 +24,15 @@ http.listen(8000, () => {
 app.use(express.json());
 
 // SOCKET.IO
-// io.on("connection", (socket) => {
-//     socket.on("join", (username) => {
-//         console.log(username); 
-//     })
-// })
+io.on("connection", (socket) => {
+    socket.on("join", (username) => {
+        console.log(username); 
+    })
+})
 
-// io.on("join", () => {
-//     console.log("User joined chat!")
-// });
+io.on("join", () => {
+    console.log("User joined chat!")
+});
 
 // DATABASE CONSTANTS 
 const lowdb = require("lowdb");

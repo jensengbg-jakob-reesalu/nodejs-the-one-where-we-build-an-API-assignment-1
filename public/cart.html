@@ -14,13 +14,26 @@
     <header>
         <img id="logo" src="./techbase-logo.png" alt="The logo of Techbase">
         <h1>Your Cart</h1>
-        <div class="cart-btn-wrapper"></div> <!--For centering the title -->
+        <div class="cart-btn-wrapper"></div>
+        <!--For centering the title -->
         <a href="products.html" id="return-btn"></a>
     </header>
     <main id="main-cart">
         <!-- "Cart empty"-message generated in client.js -->
         <!-- Product content generated in client.js -->
-        <!-- <button id="chat-btn"></button> -->
+
+        <div id="chat-btn-wrapper">
+            <a id="remove-p" class="remove-btn">
+                <div class="remove-wrapper">
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <p>Chat with customer support here!</p>
+            <button id="chat-btn">
+                <i id="chat-bubbles" class="fa fa-comments"></i>
+            </button>
+        </div>
     </main>
     <footer>
         <section>

@@ -98,6 +98,153 @@ h1 {
     font-size: 2rem;
 }
 
+#chat-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1;
+}
+
+#chat-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1;
+    
+    /* Alters button size */
+    height: 3rem;
+    width: 3rem;
+}
+
+#chat-btn-wrapper p {
+    position: absolute;
+    top: -57px;
+    right: 35px;
+    z-index: 1;
+    padding: .5rem;
+    border: 2px solid rgb(244, 244, 244);
+    border-radius: 5px;
+    background-color: chocolate;
+    color: rgb(244, 244, 244);
+    width: 10rem;
+    text-align: center;
+}
+
+#remove-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -3px;
+    top: -49px;
+    z-index: 2;
+    width: 50%;
+    height: 50%;
+}
+
+#remove-p div {
+    width: 14px;
+}
+
+#chat-btn {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    background-color: darkslategray;
+    outline: none;
+
+    /* Alters chat-bubbles size */
+    font-size: 1.7rem;
+}
+
+#chat-bubbles {
+    font-size: 100%;
+    color: rgb(244, 244, 244);
+}
+
+.chat-window-wrapper {
+    margin: 2rem;
+    height: 20rem;
+    width: 16rem;
+    transform: scale(0); /* for .expand-effect to work */
+    transform-origin: bottom right;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color:  rgb(244, 244, 244);
+}
+
+#username-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#submit-btn {
+    width: 50%;
+    margin: 1rem;
+    font-size: 1rem;
+    color: rgb(244, 244, 244);
+    background-color: chocolate;
+    border-radius: 10px;
+    outline: none;
+}
+
+#username-input {
+    width: 70%;
+    margin: 1rem;
+    padding-bottom: 5px;
+    border: 0;
+    border-bottom: 2px solid darkslategray;
+    background-color:  rgb(244, 244, 244);
+    font-size: 1rem;
+    color: chocolate;
+    text-align: center;
+    outline: none;
+}
+
+#chat-window {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#chat-input-wrapper {
+    display: flex;
+    height: 10%;
+    width: 100%;
+}
+
+#chat-input {
+    width: 70%;
+    height: 100%; 
+    outline: none;
+}
+
+#send-btn {
+    height: 100%;
+    width: 30%;
+    padding: 1px;
+    border: 0;
+    background-color: chocolate;
+    color: rgb(244, 244, 244);
+    outline: none;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -302,13 +449,17 @@ footer p {
 }
 
 /* EFFECTS */
-.hide { /*For immediate hide effect*/ 
-    display: none;
+.hidden {
+    visibility: hidden;
 }
 
-.hidden {
+.no-opacity {
     opacity: 0%;
-    transition: opacity 0.3s linear;
+}
+
+.expand {
+    transform: scale(1);
+    transition: .2s all ease-in-out; 
 }
 
 .remove-effect {
@@ -317,13 +468,17 @@ footer p {
     transition: 0.4s height ease-out; 
 }
 
-.remove-btn:hover {
+.remove-btn:hover, #chat-btn:hover {
     background-color: rgb(244, 244, 244);
     border: solid 2px darkslategray;
 }
 
 .remove-btn:hover div div {
     background-color: darkslategray;
+}
+
+#chat-btn:hover #chat-bubbles {
+    color: darkslategray;
 }
 
 .remove-btn:hover .remove-wrapper {

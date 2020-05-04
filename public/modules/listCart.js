@@ -3,6 +3,7 @@ export async function listCart() {
     await displayCart(products);
 }
 
+
 async function fetchCart() {
     let response = await fetch("http://localhost:8000/api/getCart");
     let data = await response.json();

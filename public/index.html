@@ -19,7 +19,7 @@
         </div>
         <div class="cart-btn-wrapper">
             <a id="cart-btn" href="cart.html">
-                <div class="hidden" id="counter-wrapper">
+                <div class="no-opacity" id="counter-wrapper">
                     <p id="counter">2</p>
                 </div>
                 <i id="cart-icon" class="fa fa-shopping-cart"></i>
@@ -28,23 +28,36 @@
     </header>
     <main id="main">
         <!-- Product content generated in client.js -->
-        
-        <!-- <button id="chat-btn"></button>
-
-        <div class="chat-wrapper">
-            <section class="login">
-                <input type="text" placeholder="Enter your name..." id="message" class="login-input">
-                <button id="submit" class="login-btn">Submit</button>
-            </section>
-            <div class="chat hide">
-                <section class="chat-area"></section>
-                <section class="submit-message">
-                    <input type="text" id="chat-message" class="submit-message-input">
-                    <p class="typing-message"></p>
-                    <button id="send" class="submit-message-btn">Send</button>
+        <div id="chat-wrapper">
+            <div id="chat-btn-wrapper">
+                <a id="remove-p" class="remove-btn">
+                    <div class="remove-wrapper">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </a>
+                <p id="costumer-support-p">Chat with customer support here!</p>
+                <button id="chat-btn">
+                    <i id="chat-bubbles" class="fa fa-comments"></i>
+                </button>
+            </div>
+            <div class="chat-window-wrapper hidden">
+                <section id="username-window">
+                    <input id="username-input" class="chat-btn" type="text" placeholder="Enter your name...">
+                    <button id="submit-btn">Submit</button>
+                </section>
+                <section id="chat-window" class="hidden">
+                    <section id="message-display">
+                        <!--Chat messages generated in js-->
+                    </section>
+                    <section id="chat-input-wrapper">
+                        <input id="chat-input" class="chat-btn" type="text">
+                        <button id="send-btn">Send</button>
+                    </section>
                 </section>
             </div>
-        </div> -->
+        </div>
+
     </main>
     <footer>
         <section>
@@ -63,9 +76,27 @@
         </section>
     </footer>
 
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
     <script type="module" src="./index.js"></script>
 </body>
 
 
 </html>
+
+
+
+
+<!-- <div class="chat-wrapper">
+    <section class="login">
+        <input type="text" placeholder="Enter your name..." id="message" class="login-input">
+        <button id="submit" class="login-btn">Submit</button>
+    </section>
+    <div class="chat hide">
+        <section class="chat-area"></section>
+        <section class="submit-message">
+            <input type="text" id="chat-message" class="submit-message-input">
+            <p class="typing-message"></p>
+            <button id="send" class="submit-message-btn">Send</button>
+        </section>
+    </div>
+</div> -->
